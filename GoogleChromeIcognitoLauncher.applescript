@@ -44,8 +44,9 @@ tell application "Google Chrome"
 			set visible of theIncognitoWindow to true
 		end if
 	else
-		activate application "Google Chrome"
+		launch application "Google Chrome"
 		close every window
 		make new window with properties {mode:"incognito"}
+		tell application "System Events" to set frontmost of process "Google Chrome" to true
 	end if
 end tell
